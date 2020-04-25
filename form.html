@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block head %}
+
+<title>Form of data</title>
+{% endblock %}
+{% block body %}
+<form action="{{ url_for( 'helo')}}" method="post">
+<input type="text" name="name" placeholder="Enter your name">
+    <button>Submit</button>
+</form>
+
+{% endblock %}

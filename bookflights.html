@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>BOOK A FLIGHT</title>
+{% endblock %}
+{% block body %}
+    <h1>Book A Flight</h1>
+    <form action="{{ url_for('booked') }}" method="post">
+
+<SELECT name="flight_id">
+
+    {% for flight in flights %}
+    <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }} </option>
+
+    {% endfor %}
+
+
+    </SELECT>
+      <input type="text" name="name" placeholder="Enter your name">
+    <button>Book Flight</button>
+    </form>
+
+
+
+{% endblock %}

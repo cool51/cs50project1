@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block head %}
+
+
+<title>User Login</title>
+{% endblock %}
+{% block body %}
+    <style>
+    body {
+  background: url('https://source.unsplash.com/an5SbkQpwec/1336x760') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+
+
+}
+      .centerform {
+
+   width: 1000px;
+  height: 1000px;
+  padding: 20px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin: -70px 0 0 -170px;
+      }
+    .newflex{
+        display:flex;
+        flex-wrap: wrap;
+    }
+
+    </style>
+    <div class="float-right">
+
+    <form  action="{{ url_for('books') }}" class="form-inline" method="post" >
+    <input type="text" name="email" class="form-control"  placeholder="Enter email">
+    <input type="password" name="password" class="form-control"  placeholder="Enter password">
+    <button class="btn btn-primary"> Login</button>
+    </form>
+    </div>
+
+    <div class="centerform">
+    <h1>Create new account</h1>
+    <form action="{{ url_for('newAccount')}}"  method="post" >
+        <div class="col-sm-4">
+        <input type="text" name="newemail" class="form-control" placeholder="Your email account">
+        <input type="password" name="newpassword" class="form-control" placeholder="New password">
+        <button  class="btn btn-success">Create account</button>
+            </div>
+
+    </form>
+    </div>
+
+
+{% endblock %}

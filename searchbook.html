@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Search Books</title>
+{% endblock %}
+{% block body %}
+    <style>
+
+       body {
+  background: url('https://source.unsplash.com/1emWndlDHs0/1336x760') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+
+
+}
+          .centerform {
+
+   width: 1000px;
+  height: 1000px;
+  padding: 20px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin: -70px 0 0 -170px;
+      }
+
+    </style>
+    <div class="centerform">
+    <h2>Search for your book</h2>
+    <form method="post">
+        <div class="col-sm-4">
+            <input type="text" name="titleOFBook" placeholder="Search by title">
+            <input type="text" name="authorOfBook" placeholder="Search by author name">
+            <input type="text" name="isbnOFBook" placeholder="Search by ISBN number">
+            <button class="btn btn-warning">Search</button>
+        </div>
+    </form>
+
+    </div>
+
+
+
+
+{% endblock %}
