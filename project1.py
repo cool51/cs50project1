@@ -44,8 +44,27 @@ def newAccount():
 
     return (email)
 
+@app.route("/searchBooks",methods=['POST'])
+def searchBooks():
+    bookIsbn=request.form.get("isbnOfBook")
+    bookAuthor=request.form.get("authorOfBook")
+    bookTitle=request.form.get("titleOfBook")
+
+    searchResult=conn.execute(
+        "SELECT ISBN,Title,Author,Year FROM bookData WHERE ISBN = :ISBN OR Title=:Title OR Author=:Author", {"ISBN": bookIsbn,"Title":bookTitle,"Author":bookAuthor}).fetchall()
+
+    for search in searchResult:
+        print(f"{search.ISBN}")
 
 
+    return(render_template("searchResult.html",bookTitle=search.Title))
+
+@app.route("/bookDetail",methods=['GET','POST'])
+def bookDetail():
+    bookName=request.form.get("bookTitle")
+    print(f"{bookName}")
+
+    return ("cool")
 
 
 
